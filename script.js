@@ -1,8 +1,11 @@
+
+
 document.getElementById("button-addon2").addEventListener("click", GetValue);
 let myDiv = document.getElementById("results");
 
 function GetValue() {
     let inputVal = document.getElementById("myInput").value;
+    startLoader()
     myDiv.innerHTML = ""
     value_search(inputVal)
 }
@@ -22,7 +25,17 @@ function fetch_search(url) {
                 line.href = "/company.html?symbol=" + data[i].symbol;
                 line.innerHTML += data[i].name + " (" + data[i].symbol + ")"
                 myDiv.appendChild(line)
+                stopLoader()
             }
         })
+}
+
+//Stops Loader
+function stopLoader() {
+    document.getElementById("Loader").classList.add('loaded');
+}
+//Starts Loader
+function startLoader() {
+    document.getElementById("Loader").classList.remove('loaded');
 }
 

@@ -4,3 +4,10 @@
     border-bottom: solid 1px #ced4da;
     text-decoration: none;
 }
+
+.search_style {
+    margin-top: 20px;
+}
+.loaded {
+    display: none;
+}
