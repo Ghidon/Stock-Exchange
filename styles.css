@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .listStyle {
     display: block;
     padding: 10px;
@@ -10,4 +11,11 @@
 }
 .loaded {
     display: none;
+=======
+.listStyle {
+    display: block;
+    padding: 10px;
+    border-bottom: solid 1px #ced4da;
+    text-decoration: none;
+>>>>>>> 2ac6b3bd0dac6a6ef69429ff4a69a983e46a25d4
 }
