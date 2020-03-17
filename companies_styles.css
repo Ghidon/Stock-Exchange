@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #ced4da;
+    margin-bottom: 30px;
+    }
+
+.spacing {
+    padding-right: 20px;
+}
+
+.adjust {
+    padding: 10px 30px;
+    
+}
+
+.stockPrice{
+    font-weight: bold;
+}
+
+.green_light{
+    color: lightgreen;
+    font-weight: bold;
+}
+.red_light {
+    color: red;
+    font-weight: bolder;
+}

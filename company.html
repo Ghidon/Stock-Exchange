@@ -1,0 +1,40 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js "></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="companies_styles.css" />
+    <title>Stock Exchange - Companies</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7 header">
+                <a id="company_link" class="spacing" href="">
+                    <img id="logo" src="" alt="Company_Image">
+                </a>
+                <h2 id="name" class="spacing"></h2>
+                <h3 id="sector"></h3>
+            </div>
+            <div class="col-md-7 adjust">
+                <span class="stockPrice" id="stock_price"></span>
+                <span id="changes%"></span>
+            </div>
+            <div class="col-md-5 adjust">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-md-7 adjust">
+                <span id="description"></span>
+            </div>
+        </div>
+    </div>
+    <script src="companies_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</body>
+
+</html>

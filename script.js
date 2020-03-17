@@ -22,7 +22,8 @@ function fetch_search(url) {
             for (let i = 0; i < data.length; i++) {
                 let line = document.createElement("a")
                 line.classList.add("listStyle");
-                line.href = "/company.html?symbol=" + data[i].symbol;
+                line.href = "C:/ITC/project_two/company.html?symbol=" + data[i].symbol;
+                line.target = "_blank"
                 line.innerHTML += data[i].name + " (" + data[i].symbol + ")"
                 myDiv.appendChild(line)
                 stopLoader()
