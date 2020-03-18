@@ -1,6 +1,8 @@
+//start spinner
 
 // On page load calls function to get symbol parameter from url
 document.addEventListener("DOMContentLoaded", getSymbol)
+
 
 // Get symbol parameter from url
 // builds url to use with fetch function
@@ -13,7 +15,6 @@ function getSymbol() {
     fetchUserSearch(data_source)
     fetchNewUrl(symbol);
 }
-
 
 // fetch function to get company details
 // DOM manipulation to fill HTML elements with required company details.
@@ -45,12 +46,12 @@ function fetchUserSearch(url) {
         })
 }
 
-
 //fetch function to get data for graph
 //Get array's closure values and date values
 //Slice arrays to get only last 20 results.
 //call function to update the graph
 function fetchNewUrl() {
+    document.getElementById("Loader").classList.remove('loaded');
     let new_url = `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?serietype=line`;
     fetch(new_url)
         .then(response => response.json())
@@ -62,7 +63,6 @@ function fetchNewUrl() {
             yData = closes.slice(Math.max(closes.length - 20, 0));
             drawChart(xData, yData);
         });
-
 }
 
 //Function to draw chart and update with fetched data
@@ -82,10 +82,10 @@ function drawChart(xData, yData) {
                 data: yData
             }]
         },
-
         // Configuration options go here
         options: {}
     });
+    document.getElementById("Loader").classList.add('loaded');
 }
 //first filter
 //function filterByMonth() {
@@ -108,14 +108,9 @@ function drawChart(xData, yData) {
 //let date = '1990-07-02'
 //string manipulation skills / methods
 
-
-
 //}
 
-
-
 // for the last elements. // second filter
-
 
 //checkLast10Elements();
 //fetchNewUrl();

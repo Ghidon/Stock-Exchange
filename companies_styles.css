@@ -22,7 +22,12 @@
     color: lightgreen;
     font-weight: bold;
 }
+
 .red_light {
     color: red;
     font-weight: bolder;
+}
+
+.loaded {
+    display: none;
 }
