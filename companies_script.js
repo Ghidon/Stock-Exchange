@@ -46,10 +46,8 @@ function fetchUserSearch(url) {
         })
 }
 
-//fetch function to get data for graph
-//Get array's closure values and date values
-//Slice arrays to get only last 20 results.
-//call function to update the graph
+
+// fetch data and return it
 function fetchNewUrl() {
     document.getElementById("Loader").classList.remove('loaded');
     let new_url = `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?serietype=line`;
@@ -69,10 +67,7 @@ function fetchNewUrl() {
 function drawChart(xData, yData) {
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'line',
-
-        // The data for our dataset
         data: {
             labels: xData,
             datasets: [{
@@ -82,7 +77,6 @@ function drawChart(xData, yData) {
                 data: yData
             }]
         },
-        // Configuration options go here
         options: {}
     });
     document.getElementById("Loader").classList.add('loaded');

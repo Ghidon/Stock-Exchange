@@ -11,3 +11,27 @@
 .loaded {
     display: none;
 }
+
+.green_light{
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.red_light {
+    color: red;
+    font-weight: bolder;
+}
+
+.flexible{
+    display: flex;
+    align-items: center;
+}
+
+.logoSize {
+    max-height: 40px;
+    margin-right: 40px;
+}
+
+.symbolColor {
+    color: lightslategray;
+}
