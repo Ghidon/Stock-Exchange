@@ -40,7 +40,6 @@ async function searchValue(value) {
                 symbol.innerHTML = " (" + company.symbol + ")"
                 let changes = document.createElement("span")
                 changes.innerHTML += " " + company.changes
-                //change.id = "light"
                 if (company.changes < 0) {
                     changes.classList.add("green_light");
                 } else {

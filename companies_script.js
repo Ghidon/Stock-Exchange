@@ -90,21 +90,3 @@ function drawChart(xData, yData) {
 //     month, 07
 //     day 
 // }
-
-// currenDate.year = stockDays.historical[0]. //manipulate to grab the first 4 numbers anr parse
-// currenDate.month = stockDays.historical[0]. //manipulate to grab the first 4 numbers anr parse
-// currenDate.day = stockDays.historical[0]. //manipulate to grab the first 4 numbers anr parse
-
-// search for the element with the same year but that the month is +1. unless it is month 12. in that case year+1.
-// find method
-//filter
-
-//let date = '1990-07-02'
-//string manipulation skills / methods
-
-//}
-
-// for the last elements. // second filter
-
-//checkLast10Elements();
-//fetchNewUrl();
