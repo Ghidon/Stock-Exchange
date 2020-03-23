@@ -65,17 +65,17 @@ async function searchValue(value) {
         let symbol = document.createElement("span");
         symbol.classList.add("symbolColor");
         symbol.innerHTML = " (" + company.symbol + ")";
-        let changes = document.createElement("span");
-        changes.innerHTML += " " + company.changes;
+        let percentages = document.createElement("span");
+        percentages.innerHTML += " " + company.percentage;
         if (company.changes < 0) {
-          changes.classList.add("green_light");
+          percentages.classList.add("green_light");
         } else {
-          changes.classList.add("red_light");
+          percentages.classList.add("red_light");
         }
         innerDiv.appendChild(logo);
         innerDiv.appendChild(line);
         line.appendChild(symbol);
-        line.appendChild(changes);
+        line.appendChild(percentages);
         myDiv.appendChild(innerDiv);
         stopLoader();
       });
