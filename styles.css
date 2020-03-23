@@ -1,37 +1,68 @@
+.ticker {
+  padding-top: 5px;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ticker p {
+  white-space: nowrap;
+  opacity: 0.85;
+  line-height: 15px;
+  animation: marquee 60s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0%, 0);
+  }
+  100% {
+    transform: translate(-141.5vw, 0);
+  }
+}
+
+.title {
+  padding: 30px;
+  text-align: center;
+}
+
 .listStyle {
-    display: block;
-    padding: 10px;
-    border-bottom: solid 1px #ced4da;
-    text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-bottom: solid 1px #ced4da;
+  text-decoration: none;
 }
 
 .search_style {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .loaded {
-    display: none;
+  display: none;
 }
 
-.green_light{
-    color: lightgreen;
-    font-weight: bold;
+.green_light {
+  color: rgb(106, 216, 102);
+  font-weight: bold;
 }
 
 .red_light {
-    color: red;
-    font-weight: bolder;
+  color: red;
+  font-weight: bold;
 }
 
-.flexible{
-    display: flex;
-    align-items: center;
+.blackText {
+  font-weight: bold;
+}
+
+.flexible {
+  display: flex;
+  align-items: center;
 }
 
 .logoSize {
-    max-height: 40px;
-    margin-right: 40px;
+  max-height: 40px;
+  margin-right: 40px;
 }
 
 .symbolColor {
-    color: grey;
+  color: grey;
 }
