@@ -1,6 +1,7 @@
 // get all stock price on page load
-document.addEventListener("DOMContentLoaded", marqueePrice);
+//document.addEventListener("DOMContentLoaded", marqueePrice);
 
+//now unused
 function marqueePrice() {
   let searchTicker =
     "https://financialmodelingprep.com/api/v3/stock/real-time-price";
