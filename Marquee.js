@@ -1,6 +1,7 @@
 class Marquee {
   constructor(element) {
     this.element = element;
+    this.marqueePrice();
   }
 
   marqueePrice() {
@@ -11,20 +12,23 @@ class Marquee {
       .then(data => {
         let prices = data.stockList;
         prices.forEach(element => {
-          const symbol = element.symbol;
-          const price = element.price;
-          let symbolSpan = document.createElement("span");
-          symbolSpan.classList.add("blackText");
-          let priceSpan = document.createElement("span");
-          priceSpan.classList.add("green_light");
-          symbolSpan.innerHTML += " - " + symbol + " ";
-          priceSpan.innerHTML += "$" + price + " ";
-          this.element.appendChild(symbolSpan);
-          this.element.appendChild(priceSpan);
+          this.createElement(element);
         });
       });
   }
+
+  createElement(element) {
+    const symbol = element.symbol;
+    const price = element.price;
+    let symbolSpan = document.createElement("span");
+    symbolSpan.classList.add("blackText");
+    let priceSpan = document.createElement("span");
+    priceSpan.classList.add("green_light");
+    symbolSpan.innerHTML += " - " + symbol + " ";
+    priceSpan.innerHTML += "$" + price + " ";
+    this.element.appendChild(symbolSpan);
+    this.element.appendChild(priceSpan);
+  }
 }
 
-let marqueeInstance = new Marquee(document.getElementById("ticker"));
-marqueeInstance.marqueePrice();
+new Marquee(document.getElementById("ticker"));
