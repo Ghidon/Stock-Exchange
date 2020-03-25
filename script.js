@@ -25,8 +25,29 @@ function marqueePrice() {
     });
 }
 
+//debounce function
+const debounce = (fn, delay) => {
+  let timeoutID;
+  return function(args) {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+    timeoutID = setTimeout(() => {
+      fn(args);
+    }, delay);
+  };
+};
+
 // event listeners
-document.getElementById("button-addon2").addEventListener("click", GetValue);
+document.getElementById("myInput").addEventListener(
+  "keydown",
+  debounce(GetValue => {
+    let inputVal = document.getElementById("myInput").value;
+    startLoader();
+    myDiv.innerHTML = "";
+    searchValue(inputVal);
+  }, 1000)
+);
 
 // global variable
 let myDiv = document.getElementById("results");
