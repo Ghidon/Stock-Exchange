@@ -26,7 +26,8 @@
 }
 
 .listStyle {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 10px;
   border-bottom: solid 1px #ced4da;
   text-decoration: none;
@@ -53,11 +54,6 @@
   font-weight: bold;
 }
 
-.flexible {
-  display: flex;
-  align-items: center;
-}
-
 .logoSize {
   max-height: 40px;
   margin-right: 40px;
@@ -65,4 +61,10 @@
 
 .symbolColor {
   color: grey;
+}
+
+.mark,
+mark {
+  padding: 0;
+  background-color: yellow;
 }

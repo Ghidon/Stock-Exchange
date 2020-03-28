@@ -46,7 +46,12 @@ class FormSearch {
       fetch(companyDetails)
         .then(response => response.json())
         .then(newData => {
-          new CompanyListElement(company, newData, this.ResultParent());
+          new CompanyListElement(
+            company,
+            newData,
+            this.element.value,
+            this.ResultParent()
+          );
         });
       this.stopLoader();
     });
