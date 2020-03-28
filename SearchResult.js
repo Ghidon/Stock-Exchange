@@ -10,6 +10,8 @@ class CompanyListElement {
     let stockImage = this.additionalData.profile.image;
     let stockPercentage = this.additionalData.profile.changesPercentage;
     let stockChanges = this.additionalData.profile.changes;
+    let containerDiv = document.createElement("div");
+    containerDiv.classList.add("mainDivStyle");
     let innerDiv = document.createElement("div");
     innerDiv.classList.add("listStyle");
     let logo = document.createElement("img");
@@ -26,12 +28,21 @@ class CompanyListElement {
     percentages.innerText += " " + stockPercentage;
     this.checkStockSign(stockChanges, percentages);
     innerDiv.appendChild(logo);
-    //innerDiv.appendChild(line);
     line.appendChild(symbol);
-    line.innerHTML = this.Highlight(this.input, line.innerHTML);
+    line.innerHTML = this.highlight(this.input, line.innerHTML);
     line.appendChild(percentages);
     innerDiv.appendChild(line);
-    this.parent.appendChild(innerDiv);
+    //this.parent.appendChild(innerDiv);
+    let compareDiv = document.createElement("div");
+    let compareButton = document.createElement("button");
+    compareButton.classList.add("btn");
+    compareButton.classList.add("btn-info");
+    compareButton.innerText = "Compare";
+    compareButton.addEventListener("click", ev => this.Compare(ev));
+    compareDiv.appendChild(compareButton);
+    containerDiv.appendChild(innerDiv);
+    containerDiv.appendChild(compareDiv);
+    this.parent.appendChild(containerDiv);
   }
 
   checkStockSign(stockChanges, element) {
@@ -40,14 +51,15 @@ class CompanyListElement {
       : element.classList.add("red_light");
   }
 
-  Highlight(input, text) {
+  highlight(input, text) {
     const newText = text.replace(
       new RegExp(input, "gi"),
       match => `<mark>${match}</mark>`
     );
     return newText;
-    //look inside line.innerText for something that looks like this input
-    //create a tag around what you find
-    //Assign a CSS class to that tag
+  }
+
+  Compare() {
+    console.log(this.company);
   }
 }

@@ -29,7 +29,6 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: solid 1px #ced4da;
   text-decoration: none;
 }
 
@@ -67,4 +66,11 @@
 mark {
   padding: 0;
   background-color: yellow;
+}
+
+.mainDivStyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px #ced4da;
 }
