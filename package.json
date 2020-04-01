@@ -1,0 +1,25 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israeltechchallenge/js-project-2-stock-exchange-Ghidon.git"
+  },
+  "author": "Ghid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israeltechchallenge/js-project-2-stock-exchange-Ghidon/issues"
+  },
+  "homepage": "https://github.com/israeltechchallenge/js-project-2-stock-exchange-Ghidon#readme",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "mongodb": "^3.5.5",
+    "nodemon": "^2.0.2"
+  }
+}

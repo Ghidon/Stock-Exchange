@@ -36,10 +36,7 @@ class FormSearch {
 
   //Builds the query url and calls function to fetch data
   async searchValue(value) {
-    let search =
-      "https://financialmodelingprep.com/api/v3/search?query=" +
-      value +
-      "&limit=10&exchange=NASDAQ";
+    let search = `https://financialmodelingprep.com/api/v3/search?query=${value}&limit=10&exchange=NASDAQ`;
     const fetchedSearch = await this.fetchSearch(search);
     fetchedSearch.map(company => {
       let companyDetails = `https://financialmodelingprep.com/api/v3/company/profile/${company.symbol}`;
