@@ -32,13 +32,12 @@ class CompanyListElement {
     line.innerHTML = this.highlight(this.input, line.innerHTML);
     line.appendChild(percentages);
     innerDiv.appendChild(line);
-    //this.parent.appendChild(innerDiv);
     let compareDiv = document.createElement("div");
     let compareButton = document.createElement("button");
     compareButton.classList.add("btn");
     compareButton.classList.add("btn-info");
     compareButton.innerText = "Compare";
-    compareButton.addEventListener("click", ev => this.Compare(ev));
+    compareButton.addEventListener("click", (ev) => this.Compare(ev));
     compareDiv.appendChild(compareButton);
     containerDiv.appendChild(innerDiv);
     containerDiv.appendChild(compareDiv);
@@ -54,7 +53,7 @@ class CompanyListElement {
   highlight(input, text) {
     const newText = text.replace(
       new RegExp(input, "gi"),
-      match => `<mark>${match}</mark>`
+      (match) => `<mark>${match}</mark>`
     );
     return newText;
   }

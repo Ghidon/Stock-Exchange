@@ -6,7 +6,7 @@ class FormSearch {
 
   debounce = (fn, delay) => {
     let timeoutID;
-    return function(args) {
+    return function (args) {
       if (timeoutID) {
         clearTimeout(timeoutID);
       }
@@ -24,7 +24,7 @@ class FormSearch {
   event() {
     this.element.addEventListener(
       "keydown",
-      this.debounce(e => {
+      this.debounce((e) => {
         let inputVal = this.element.value;
         this.startLoader();
         let myDiv = this.ResultParent();
@@ -36,13 +36,13 @@ class FormSearch {
 
   //Builds the query url and calls function to fetch data
   async searchValue(value) {
-    let search = `https://financialmodelingprep.com/api/v3/search?query=${value}&limit=10&exchange=NASDAQ`;
+    let search = `https://financialmodelingprep.com/api/v3/search?query=${value}&limit=10&exchange=NASDAQ&apikey=d57c14ca0b75ea7a7da3ceab36d9970e`;
     const fetchedSearch = await this.fetchSearch(search);
-    fetchedSearch.map(company => {
-      let companyDetails = `https://financialmodelingprep.com/api/v3/company/profile/${company.symbol}`;
+    fetchedSearch.map((company) => {
+      let companyDetails = `https://financialmodelingprep.com/api/v3/company/profile/${company.symbol}?apikey=d57c14ca0b75ea7a7da3ceab36d9970e`;
       fetch(companyDetails)
-        .then(response => response.json())
-        .then(newData => {
+        .then((response) => response.json())
+        .then((newData) => {
           new CompanyListElement(
             company,
             newData,
@@ -58,8 +58,8 @@ class FormSearch {
   async fetchSearch(url) {
     let companies = [];
     await fetch(url)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         companies = data;
         return companies;
       });

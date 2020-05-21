@@ -6,12 +6,12 @@ class Marquee {
 
   marqueePrice() {
     let searchTicker =
-      "https://financialmodelingprep.com/api/v3/stock/real-time-price";
+      "https://financialmodelingprep.com/api/v3/stock/real-time-price?apikey=d57c14ca0b75ea7a7da3ceab36d9970e";
     fetch(searchTicker)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         let prices = data.stockList;
-        prices.forEach(element => {
+        prices.forEach((element) => {
           this.createElement(element);
         });
       });
